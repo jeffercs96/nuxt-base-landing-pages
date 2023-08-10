@@ -1,7 +1,6 @@
 ---
 title: About
 ---
-# About PAge
 ::app-alert
 Hola mundo **There**! [Home](/)
 ::
