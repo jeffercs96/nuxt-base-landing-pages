@@ -58,3 +58,10 @@ Attributes works on:
 - ![](/favicon.ico){.inline.m-0.bg-primary-800} image,
 - [link](#attributes){.bg-primary-400}, `code`{.text-red-500},
 - _italic_{.bg-primary-500} and **bold**{.bg-primary-500} texts.
+
+
+Hello, this is a [Markdown]{.px-1 .bg-blue-200 .rounded-lg} file!
+
+::div{.w-full .bg-green-200 .p-4}
+Another way to use it!
+::
