@@ -1,6 +1,5 @@
 <template>
-<div class="text-blue-600 ">
-    <slot/>
+<div id=''>
 </div>
 </template>
 <script setup lang='ts'></script>
