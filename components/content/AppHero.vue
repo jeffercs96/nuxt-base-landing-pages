@@ -5,10 +5,18 @@
     </h1>
     <slot name="description" />
   </section> -->
-  <div :style="{
-    width: '300px'
-  }">
-
+  <p class="dark:bg-slate-800">is dark {{ isDark }}</p>
+  <button
+    @click="toggleDark()"
+    class="px-4 py-2 text-white bg-green-500 rounded dark:bg-purple-500 dark:text-green"
+  >
+    toggle dark mode
+  </button>
+  <div
+    :style="{
+      width: '300px',
+    }"
+  >
     <div
       class="w-full p-8 rounded shadow-2xl bg-red-600 card"
       ref="target"
@@ -17,7 +25,7 @@
         transition: 'transform 0.25s ease-out ',
       }"
     >
-      <h1 class=" font-bold">algo por aqui</h1>
+      <h1 class="font-bold">algo por aqui</h1>
     </div>
   </div>
   <div
@@ -38,12 +46,22 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useMouse, useWindowSize, useMouseInElement } from "@vueuse/core";
+import {
+  useMouse,
+  useWindowSize,
+  useMouseInElement,
+  useDark,
+  useToggle,
+} from "@vueuse/core";
 
 const { x, y } = useMouse();
 const { width, height } = useWindowSize();
 
 const target = ref(null);
+
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
+
 const { elementX, elementY, isOutside, elementHeight, elementWidth } =
   useMouseInElement(target);
 
@@ -62,8 +80,6 @@ const cardTransform = computed(() => {
     ? ""
     : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`;
 });
-
-
 
 const dx = computed(() => Math.abs(x.value - width.value / 2));
 const dy = computed(() => Math.abs(y.value - height.value / 2));
