@@ -1,49 +1,31 @@
 <template>
-  <!-- <section id="Hero" class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-    <h1 class="text-4xl">
-      <ContentSlot :use="$slots.title" unwrap="p" />
-    </h1>
-    <slot name="description" />
-  </section> -->
-  <p class="dark:bg-slate-800">is dark {{ isDark }}</p>
-  <button
-    @click="toggleDark()"
-    class="px-4 py-2 text-white bg-green-500 rounded dark:bg-purple-500 dark:text-green"
-  >
-    toggle dark mode
-  </button>
-  <div
-    :style="{
-      width: '300px',
-    }"
-  >
+  <section class="bg-white dark:bg-gray-900">
     <div
-      class="w-full p-8 rounded shadow-2xl bg-red-600 card"
-      ref="target"
-      :style="{
-        transform: cardTransform,
-        transition: 'transform 0.25s ease-out ',
-      }"
+      class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
     >
-      <h1 class="font-bold">algo por aqui</h1>
+      <div class="mr-auto place-self-center lg:col-span-7">
+        <h1
+          class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
+        >
+          <ContentSlot :use="$slots.title" unwrap="p" />
+        </h1>
+        <p
+          class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
+        >
+          <slot name="description" />
+        </p>
+       
+      </div>
+      <div class="xs:mt-4 lg:mt-0 lg:col-span-5 lg:flex">
+        <TargetComponent>
+          <img
+            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
+            alt="mockup"
+          />
+        </TargetComponent>
+      </div>
     </div>
-  </div>
-  <div
-    class="w-screen h-screen bg-gradient-to-b from-black to-green-500/60 from-80% flex items-center justify-center relative overflow-hidden"
-  >
-    <div
-      class="absolute bg-green-500/30 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none blur-3xl"
-      :style="{
-        left: `${x}px`,
-        top: `${y}px`,
-        width: `${size}px`,
-        height: `${size}px`,
-      }"
-    />
-
-    <div style="color: white">Hola</div>
-    <a ref="logo" href="https://learnvue.co">sdasdasd</a>
-  </div>
+  </section>
 </template>
 <script setup lang="ts">
 import {

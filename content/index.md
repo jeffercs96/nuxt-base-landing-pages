@@ -1,9 +1,12 @@
 ::app-hero
 #title
-# VerisSoftware: Transformando Desafíos en Éxitos Tecnológicos
+# Soy **Jefferson Sandoval**
 
 #description
 Bienvenido a VerisSoftware, donde la innovación y la excelencia tecnológica se unen para crear soluciones sobresalientes. Con un historial de éxitos comprobados y un equipo apasionado, te brindamos servicios tecnológicos que marcan la diferencia.
+
+#aboutMe
+dasdsa
 ::
 
 ## Nuestros Casos de Éxito
