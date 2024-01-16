@@ -1,12 +1,21 @@
 <template>
-  <main class="w-screen h-screen bg-gradient-to-b from-white dark:from-black to-green-500/60 from-80%  relative overflow-hidden">
+  <main class=" bg-gradient-to-b from-white dark:from-black to-green-500/60 from-80%  relative overflow-hidden">
+    <NuxtLoadingIndicator color="#14b8a6" />
+
+
     <button
     @click="toggleDark()"
     class="px-4 py-2 text-white bg-green-500 rounded dark:bg-purple-500 dark:text-green"
   >
     toggle dark mode
   </button>
-    <ContentDoc />
+  <TargetComponent>
+    <img
+      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
+      alt="mockup"
+    />
+  </TargetComponent>
+  <NuxtWelcome />
     <div
       class="absolute bg-green-500/30 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none blur-3xl"
       :style="{
@@ -15,7 +24,7 @@
         width: `${size}px`,
         height: `${size}px`,
       }"
-    />
+    ></div>
   </main>
 </template>
 <script lang="ts" setup>
