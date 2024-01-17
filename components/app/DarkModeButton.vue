@@ -2,7 +2,7 @@
   <transition name="fade" mode="out-in">
     <button
       @click="toggleDark()"
-      class="h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 "
+      class="h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
     >
       <Icon
         :key="isDark"
