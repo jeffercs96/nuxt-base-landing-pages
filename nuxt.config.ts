@@ -6,30 +6,16 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/html-validator",
     "@vueuse/nuxt",
-    "@nuxtjs/i18n",
+    'nuxt-icon',
+    "nuxt-headlessui",
   ],
-  i18n: {
-    defaultLocale: "es",
-    locales: [
-      {
-        code: "en",
-        iso: "en-US",
-        file: "en-US.json",
-      },
-      {
-        code: "es",
-        iso: "es-MX",
-        file: "es-MX.json",
-      },
-    ],
-    langDir: 'locales/',
-    
-  },
   content: {
     // https://content.nuxtjs.org/api/configuration
   },
   css: ["~/assets/css/main.css"],
-
+  headlessui: {
+    prefix: "Headless",
+  },
   postcss: {
     plugins: {
       tailwindcss: {},

@@ -2,13 +2,8 @@
   <main class=" bg-gradient-to-b from-white dark:from-black to-green-500/60 from-80%  relative overflow-hidden">
     <NuxtLoadingIndicator color="#14b8a6" />
 
-
-    <button
-    @click="toggleDark()"
-    class="px-4 py-2 text-white bg-green-500 rounded dark:bg-purple-500 dark:text-green"
-  >
-    toggle dark mode
-  </button>
+    <AppNavbar/>
+    
   <TargetComponent>
     <img
       src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
@@ -32,8 +27,7 @@ import {
   useMouse,
   useWindowSize,
   useMouseInElement,
-  useDark,
-  useToggle,
+
 } from "@vueuse/core";
 
 
@@ -42,8 +36,7 @@ const { width, height } = useWindowSize();
 
 const target = ref(null);
 
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
+
 
 const { elementX, elementY, isOutside, elementHeight, elementWidth } =
   useMouseInElement(target);
