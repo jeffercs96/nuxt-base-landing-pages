@@ -3,8 +3,7 @@
     <NuxtLoadingIndicator color="#14b8a6" />
 
     <AppNavbar />
-    <div class="mx-auto  max-w-7xl">
-
+    <div class="mx-auto max-w-7xl">
       <AppHero />
       <ContentDoc />
     </div>

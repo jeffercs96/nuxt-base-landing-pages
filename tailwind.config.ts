@@ -24,17 +24,21 @@
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./app.vue",
-    "./error.vue",
+    "components/**/*.{vue,js,ts}",
+    "layouts/**/*.vue",
+    "pages/**/*.vue",
+    "composables/**/*.{js,ts}",
+    "plugins/**/*.{js,ts}",
+    "App.{js,ts,vue}",
+    "app.{js,ts,vue}",
+    "Error.{js,ts,vue}",
+    "error.{js,ts,vue}",
+    "content/**/*.md",
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};

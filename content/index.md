@@ -1,7 +1,12 @@
-::about-me
+::about-me{type="warning"}
 #title
 # Soy **Jefferson Sandoval**
+Hello [World]{.text-green-500 bg-yellow-300 .px-1 .bg-blue-200 .rounded-lg}!
+Hello, this is a [Markdown]{.px-1 .bg-blue-200 .rounded-lg} file!
 
+::div{.w-full .bg-green-200 .p-4}
+Another way to use it!
+::
 #description
 Bienvenido a VerisSoftware, donde la innovación y la excelencia tecnológica se unen para crear soluciones sobresalientes. Con un historial de éxitos comprobados y un equipo apasionado, te brindamos servicios tecnológicos que marcan la diferencia.
 

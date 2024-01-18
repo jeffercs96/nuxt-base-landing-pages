@@ -1,5 +1,5 @@
 <template>
-  <div class="relative isolate px-6 pt-14 lg:px-8">
+  <section class="relative isolate px-6 pt-14 lg:px-8">
     <div
       class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
       aria-hidden="true"
@@ -40,7 +40,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script setup lang="ts"></script>
 <style scoped lang="scss">
