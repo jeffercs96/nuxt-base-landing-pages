@@ -1,17 +1,14 @@
 <template>
-  <main class=" bg-gradient-to-b from-white dark:from-black to-green-500/60 from-80%  relative overflow-hidden">
+  <main class="bg-white dark:bg-slate-950 relative overflow-hidden">
     <NuxtLoadingIndicator color="#14b8a6" />
 
-    <AppNavbar/>
-    <AppHero/>
-    
-  <TargetComponent>
-    <img
-      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
-      alt="mockup"
-    />
-  </TargetComponent>
-  <NuxtWelcome />
+    <AppNavbar />
+    <div class="mx-auto  max-w-7xl">
+
+      <AppHero />
+      <ContentDoc />
+    </div>
+
     <div
       class="absolute bg-green-500/30 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none blur-3xl"
       :style="{
@@ -24,20 +21,12 @@
   </main>
 </template>
 <script lang="ts" setup>
-import {
-  useMouse,
-  useWindowSize,
-  useMouseInElement,
-
-} from "@vueuse/core";
-
+import { useMouse, useWindowSize, useMouseInElement } from "@vueuse/core";
 
 const { x, y } = useMouse();
 const { width, height } = useWindowSize();
 
 const target = ref(null);
-
-
 
 const { elementX, elementY, isOutside, elementHeight, elementWidth } =
   useMouseInElement(target);
