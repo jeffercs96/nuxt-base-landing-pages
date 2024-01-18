@@ -3,6 +3,7 @@
     <NuxtLoadingIndicator color="#14b8a6" />
 
     <AppNavbar/>
+    <AppHero/>
     
   <TargetComponent>
     <img

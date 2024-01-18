@@ -51,38 +51,22 @@
               class="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white dark:bg-slate-800 shadow-lg ring-1 ring-black/5 focus:outline-none"
             >
               <div class="px-1 py-1">
-                <MenuItem v-slot="{ active }">
-                  <button
-                    class="group flex w-full items-center rounded-md px-2 py-2 text-sm text-slate-950 dark:text-green-500"
+                <MenuItem
+                  v-for="link in links"
+                  :key="link.to"
+                  as="template"
+                  v-slot="{ active }"
+                  class="flex"
+                >
+                  <a
+                    class="w-full p-2 text-slate-950 dark:text-green-500 sm:text-sm"
                   >
                     <Icon
-                      name="line-md:home"
+                      :name="link.icon"
                       class="mr-2 h-5 w-5 text-slate-950 dark:text-green-500"
                     />
-                    Home
-                  </button>
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <button
-                    class="group flex w-full items-center rounded-md px-2 py-2 text-sm text-slate-950 dark:text-green-500"
-                  >
-                    <Icon
-                      name="line-md:account"
-                      class="mr-2 h-5 w-5 text-slate-950 dark:text-green-500"
-                    />
-                    About me
-                  </button>
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <button
-                    class="group flex w-full items-center rounded-md px-2 py-2 text-sm text-slate-950 dark:text-green-500"
-                  >
-                    <Icon
-                      name="line-md:briefcase"
-                      class="mr-2 h-5 w-5 text-slate-950 dark:text-green-500"
-                    />
-                    Portfolio
-                  </button>
+                    {{ link.label }}
+                  </a>
                 </MenuItem>
               </div>
             </MenuItems>
@@ -90,15 +74,14 @@
         </Menu>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        
-          <a
+        <a
           v-for="link in links"
           :key="link.to"
-            href="#"
-            class="w-32 text-center py-2 px-2 rounded text-slate-950 dark:text-green-500 hover:bg-gray-100 dark:hover:bg-gray-700"
-            >{{ link.label }}</a
-          >
-        
+          href="#"
+          class="w-28 text-center py-2 px-2 rounded text-slate-950 dark:text-green-500 hover:bg-gray-100 dark:hover:bg-gray-700"
+          :class="[link.label === 'Contact me' ? 'bg-green-500 text-white dark:text-white hover:bg-green-400 dark:hover:bg-green-400': '']"
+          >{{ link.label }}</a
+        >
       </div>
 
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -109,16 +92,12 @@
 </template>
 
 <script setup lang="ts">
-import {
-  Menu,
-  MenuButton,
-  MenuItems,
-  MenuItem,
-} from "@headlessui/vue";
+import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 
 const links = [
   { label: "Home", icon: "line-md:home", to: "/" },
   { label: "About me", icon: "line-md:account", to: "/" },
   { label: "Portfolio", icon: "line-md:briefcase", to: "/" },
+  { label: "Contact me", icon: "line-md:email", to: "/" },
 ];
 </script>
